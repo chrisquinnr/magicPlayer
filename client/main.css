@@ -1,0 +1,10 @@
+.card{
+  background: url('img/back.jpg');
+  width:150px;
+  height:208px;
+  margin:1em;
+}
+
+.rotate{
+  transform: rotate(0.25turn);
+}

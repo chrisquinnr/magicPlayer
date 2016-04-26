@@ -1,0 +1,27 @@
+<head>
+  <title>simple</title>
+</head>
+
+<body>
+<div class="container">
+  {{>cardBoard}}
+</div>
+</body>
+
+<template name="cardBoard">
+  <div class="row">
+    <div class="opponent">
+      {{>opponentBoard}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="redzone">
+      {{>redZone}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="you">
+      {{>yourBoard}}
+    </div>
+  </div>
+</template>
