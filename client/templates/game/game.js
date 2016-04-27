@@ -23,7 +23,7 @@ Template.game.events({
 
     cards.push(card);
 
-
+    Library.update({_id:l._id}, {$set:{cards:_.rest(l.cards)}});
 
     Hand.update({_id:h._id}, {$set:{cards:cards}});
    }
