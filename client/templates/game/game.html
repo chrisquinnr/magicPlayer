@@ -1,17 +1,22 @@
 <template name="game">
-  <div class="row">
-    <div class="opponent">
-      {{>opponentBoard}}
+  <div class="container">
+    <div class="row">
+      <div class="opponent">
+        {{>opponentBoard}}
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="redzone">
-      {{>redZone}}
+    <div class="row">
+      <div class="redzone">
+        {{>redZone}}
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="you">
-      {{>yourBoard}}
+    <div class="row">
+      <div class="you">
+        {{>yourBoard}}
+      </div>
+      <div class="">
+        <button class="btn btn-info deal">Deal</button>
+      </div>
     </div>
   </div>
 </template>

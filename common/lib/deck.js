@@ -1,20 +1,16 @@
-export function addToDeck (id, card, quantity){
+export function addToDeck (deckId, card, quantity){
   if(!quantity){
     quantity = 1;
   }
-  let deck = Decks.findOne({marker: id});
-  let list = [];
+
+  let deck = Decks.findOne({});
   if(!deck){
-    Decks.insert({marker:id});
-  } else {
-    if(deck.list){
-      list = deck.list;
-    }
+    deck = Decks.insert({list:[]});
   }
-  card.quantity = quantity;
+  let obj = {};
+  obj.card = card;
+  obj.quantity = quantity;
 
-  list.push(card);
-
-  Decks.update({_id:deck._id}, {$set:{list:_.uniq(list)}});
+  Decks.update({_id:deck._id}, {$addToSet:{list:obj}});
 
 }

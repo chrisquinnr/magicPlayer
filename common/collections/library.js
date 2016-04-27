@@ -1,0 +1,1 @@
+Library = new Mongo.Collection('library');

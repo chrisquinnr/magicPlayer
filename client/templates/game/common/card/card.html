@@ -1,11 +1,12 @@
 <template name="card">
   {{#if small}}
-    <div id="{{id}}" class="card-small pull-left">
-      Card
+    <div id="{{data._id}}" class="card-small pull-left">
+      {{data.name}}
     </div>
   {{else}}
-    <div id="{{id}}" class="card pull-left {{rotate id}}">
-      Card
+    <div id="{{data._id}}" class="card pull-left {{rotate data._id}}">
+      {{data.name}}
+      <img class="card-small" src="{{data.image}}">
     </div>
   {{/if}}
 
