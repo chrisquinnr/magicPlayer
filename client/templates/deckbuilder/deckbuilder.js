@@ -21,9 +21,6 @@ Template.deckbuilder.events({
     let quantity = $('.quantity').val();
     addToDeck('id', curr, quantity);
     Session.set('result', '');
-  },
-  'click .update':()=>{
-    updateDeck(curr)
   }
 });
 
