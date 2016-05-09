@@ -78,6 +78,9 @@ cardBuilder = function(data = mandatory('data'), searchText = mandatory('searchT
 
   }
 
+  console.log(card);
+  console.log(edition);
+
   if (!card || !edition) {
     return {
       text: "Sorry we couldn't work that one out."

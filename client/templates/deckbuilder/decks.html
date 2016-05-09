@@ -1,0 +1,11 @@
+<template name="decks">
+  Deckbuilder
+
+  <input type="text" name="quantity" class="form-control quantity">
+  <input type="text" name="cardname" class="form-control cardname">
+  <button class="btn btn-success find">Go</button>
+
+  {{#each decks}}
+    <a href="/singledeck/{{_id}}">{{title}}</a>
+  {{/each}}
+</template>

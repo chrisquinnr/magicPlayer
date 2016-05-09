@@ -25,3 +25,5 @@ kadira:flow-router
 kadira:blaze-layout
 http
 session
+accounts-password
+ian:accounts-ui-bootstrap-3

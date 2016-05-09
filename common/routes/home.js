@@ -1,5 +1,5 @@
 FlowRouter.route('/', {
   action: function(params, queryParams) {
-    BlazeLayout.render('layout', {content: 'game'});
+    BlazeLayout.render('layout', {content: 'dashboard'});
   }
 });
