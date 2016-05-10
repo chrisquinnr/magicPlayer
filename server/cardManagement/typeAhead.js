@@ -19,9 +19,9 @@ export function cardPredictiveFetcher(searchText = mandatory('searchText')) {
     let result = HTTP.call("GET", "https://api.deckbrew.com/mtg/cards/typeahead", {
       params: params
     });
-    console.log('----------');
-    console.log(result.data);
-    console.log('----------');
+    //console.log('----------');
+    //console.log(result.data);
+    //console.log('----------');
     return result.data;
   //}
 }

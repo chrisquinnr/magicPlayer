@@ -2,27 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37569706-7cc9-4bf4-99c7-b4c5a1976cb5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/dashboard/dashboard.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/deckbuilder/decks.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/deckbuilder/singledeck/singledeck.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/deckbuilder/singledeck/singledeck.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/layout/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/nav/navbar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/nav/navbar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/routes/singledeck.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/cardManagement/typeAhead.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/templates/deckbuilder/deckbuilder.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/templates/deckbuilder/deckbuilder.html" afterPath="$PROJECT_DIR$/client/templates/deckbuilder/decks.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/routes/deckbuilder.js" afterPath="$PROJECT_DIR$/common/routes/decks.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_browser.xml" afterPath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_browser.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/searchresults/searchresults.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/searchresults/searchresults.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/routes/searchresults.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/packages" afterPath="$PROJECT_DIR$/.meteor/packages" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/versions" afterPath="$PROJECT_DIR$/.meteor/versions" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/game/common/card/card.html" afterPath="$PROJECT_DIR$/client/templates/game/common/card/card.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/layout/layout.html" afterPath="$PROJECT_DIR$/client/templates/layout/layout.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/routes/home.js" afterPath="$PROJECT_DIR$/common/routes/home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/cardManagement/cardFetcher.js" afterPath="$PROJECT_DIR$/server/cardManagement/cardFetcher.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/methods/cardOptions.js" afterPath="$PROJECT_DIR$/server/methods/cardOptions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/nav/navbar.js" afterPath="$PROJECT_DIR$/client/templates/nav/navbar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/cardManagement/typeAhead.js" afterPath="$PROJECT_DIR$/server/cardManagement/typeAhead.js" />
     </list>
     <ignored path="magicPlayer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,26 +29,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/templates/layout/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.9615384">
-              <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="singledeck.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/routes/singledeck.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="layout.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/templates/layout/layout.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -73,31 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/routes/home.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="decks.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/routes/decks.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="navbar.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="navbar.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/templates/nav/navbar.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2703016">
-              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="30" selection-end-column="15" />
+            <state vertical-scroll-proportion="-12.230769">
+              <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -107,7 +53,47 @@
         <entry file="file://$PROJECT_DIR$/client/templates/nav/navbar.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
+              <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="searchresults.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/routes/searchresults.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="searchresults.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/templates/searchresults/searchresults.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.9615384">
+              <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="card.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/templates/game/common/card/card.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.07888631">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="searchresults.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/templates/searchresults/searchresults.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -127,17 +113,7 @@
         <entry file="file://$PROJECT_DIR$/server/cardManagement/typeAhead.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cardOptions.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/methods/cardOptions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+              <caret line="18" column="79" selection-start-line="18" selection-start-column="70" selection-end-line="18" selection-end-column="79" />
               <folding />
             </state>
           </provider>
@@ -148,8 +124,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -159,9 +135,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/templates/common/graveyard.html" />
-        <option value="$PROJECT_DIR$/client/templates/common/exile.html" />
-        <option value="$PROJECT_DIR$/client/templates/common/hand.html" />
         <option value="$PROJECT_DIR$/client/templates/common/hand/card.html" />
         <option value="$PROJECT_DIR$/client/templates/redZone/redZone.html" />
         <option value="$PROJECT_DIR$/client/main.js" />
@@ -192,7 +165,6 @@
         <option value="$PROJECT_DIR$/client/templates/game/game.html" />
         <option value="$PROJECT_DIR$/client/main.css" />
         <option value="$PROJECT_DIR$/client/templates/game/game.js" />
-        <option value="$PROJECT_DIR$/client/templates/game/common/card/card.html" />
         <option value="$PROJECT_DIR$/server/cardManagement/cardFetcher.js" />
         <option value="$PROJECT_DIR$/client/templates/public/login/login.html" />
         <option value="$PROJECT_DIR$/client/templates/layout/layout.html" />
@@ -207,9 +179,13 @@
         <option value="$PROJECT_DIR$/common/routes/decks.js" />
         <option value="$PROJECT_DIR$/client/templates/deckbuilder/singledeck/singledeck.js" />
         <option value="$PROJECT_DIR$/server/methods/cardOptions.js" />
-        <option value="$PROJECT_DIR$/client/templates/nav/navbar.js" />
-        <option value="$PROJECT_DIR$/server/cardManagement/typeAhead.js" />
         <option value="$PROJECT_DIR$/client/templates/nav/navbar.html" />
+        <option value="$PROJECT_DIR$/common/routes/searchresults.js" />
+        <option value="$PROJECT_DIR$/client/templates/searchresults/searchresults.js" />
+        <option value="$PROJECT_DIR$/server/cardManagement/typeAhead.js" />
+        <option value="$PROJECT_DIR$/client/templates/nav/navbar.js" />
+        <option value="$PROJECT_DIR$/client/templates/searchresults/searchresults.html" />
+        <option value="$PROJECT_DIR$/client/templates/game/common/card/card.html" />
       </list>
     </option>
   </component>
@@ -221,8 +197,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="465" />
-    <option name="y" value="23" />
+    <option name="x" value="89" />
+    <option name="y" value="30" />
     <option name="width" value="1827" />
     <option name="height" value="1340" />
   </component>
@@ -417,6 +393,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="magicPlayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="magicPlayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="searchresults" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -674,7 +672,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="465" y="23" width="1827" height="1340" extended-state="0" />
+    <frame x="89" y="30" width="1827" height="1340" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13669468" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -713,29 +711,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/cardManagement/cardFetcher.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/cardManagement/checkCardDB.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/templates/deckbuilder/decks.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/templates/game/common/hand/hand.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -937,14 +912,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/templates/game/common/card/card.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2563805">
-          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/templates/game/game.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4786036">
@@ -1032,14 +999,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/routes/singledeck.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/templates/layout/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.9615384">
@@ -1056,6 +1015,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/common/routes/singledeck.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09572072">
+          <caret line="5" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/templates/searchresults/searchresults.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/cardManagement/cardFetcher.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1064,18 +1039,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/templates/nav/navbar.js">
+    <entry file="file://$PROJECT_DIR$/common/routes/searchresults.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/methods/cardOptions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1083,15 +1050,47 @@
     <entry file="file://$PROJECT_DIR$/server/cardManagement/typeAhead.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+          <caret line="18" column="79" selection-start-line="18" selection-start-column="70" selection-end-line="18" selection-end-column="79" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/templates/nav/navbar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2703016">
-          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="30" selection-end-column="15" />
+        <state vertical-scroll-proportion="-12.230769">
+          <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/methods/cardOptions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05743243">
+          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/templates/nav/navbar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/templates/searchresults/searchresults.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9615384">
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/templates/game/common/card/card.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07888631">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>

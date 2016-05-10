@@ -9,6 +9,7 @@ Template.navBar.events({
  },
  'click .searcher':(e)=>{
    e.preventDefault();
+   FlowRouter.go('/searchresults');
    searchBarTrigger();
  },
  'click .add':()=>{
@@ -32,7 +33,7 @@ searchBarTrigger = function (){
   let search = $('.cardsearch').val();
   console.log(search);
   if(search){
-    Meteor.call('findCardTypeAhead', search, function(err, resp){
+    Meteor.call('findCard', search, function(err, resp){
       if(!err){
         if(resp){
           console.log(resp);
