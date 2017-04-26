@@ -1,22 +1,37 @@
 <template name="deckbuilder">
-  Deckbuilder
-
-  <input type="text" name="quantity" class="form-control quantity">
-  <input type="text" name="cardname" class="form-control cardname">
-  <button class="btn btn-success find">Go</button>
-
-  {{#if result}}
-    {{#with result}}
-      <div class="result">
-        <img src="{{image}}">
-        <button class="btn btn-success add">Add</button>
-      </div>
-    {{/with}}
-  {{/if}}
-
-  {{#if decklist}}
-    {{#each decklist.list}}
-      {{>card data=card small='true'}}
-    {{/each}}
-  {{/if}}
+  <div class="row">
+    <div class="col-lg-4">
+      <h2>Deckbuilder</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4">
+      <input type="text" placeholder='card name' name="cardname" class="form-control cardname">
+    </div>
+    <div class="col-lg-1">
+      <input type="text" placeholder='quantity' name="quantity" class="form-control quantity">
+    </div>
+    <div class="col-lg-2">
+      <button class="btn btn-success find">Go</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      {{#if result}}
+        {{#each result}}
+          <div class="result">
+            <img src="{{image_url}}">
+            <button class="btn btn-success add">Add</button>
+          </div>
+        {{/each}}
+      {{/if}}
+    </div>
+    <div class="col-lg-4">
+    {{#if decklist}}
+      {{#each decklist.list}}
+        {{>card data=card small='true'}}
+      {{/each}}
+    {{/if}}
+    </div>
+  </div>
 </template>

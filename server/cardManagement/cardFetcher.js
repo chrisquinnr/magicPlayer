@@ -25,7 +25,7 @@ export function cardFetcher(searchText = mandatory('searchText'), user = mandato
     console.log('----------');
     console.log(check);
     console.log('----------');
-    return cardBuilder(check, searchText, user)
+    return cardBuilder(check, searchText, user, false)
 
   } else {
     console.log('fetching from deck brew')
@@ -35,11 +35,11 @@ export function cardFetcher(searchText = mandatory('searchText'), user = mandato
     console.log('----------');
     console.log(result.data);
     console.log('----------');
-    return cardBuilder(result.data, searchText, user)
+    return cardBuilder(result.data, searchText, user, true)
   }
 }
 
-cardBuilder = function(data = mandatory('data'), searchText = mandatory('searchText'), user = mandatory('user')){
+cardBuilder = function(data = mandatory('data'), searchText = mandatory('searchText'), user = mandatory('user'), editionCheck){
 
   let card = false;
 
@@ -56,8 +56,6 @@ cardBuilder = function(data = mandatory('data'), searchText = mandatory('searchT
       i++;
     });
 
-    console.log(leven);
-
     let closest = _.min(leven, function (elem) {
       return elem.dist;
     });
@@ -67,39 +65,46 @@ cardBuilder = function(data = mandatory('data'), searchText = mandatory('searchT
     card = data[closest.count];
 
   } else {
-
     console.log('Pow, right in the kisser');
     card = data[0];
-
   }
 
-  if (card) {
-    var edition = editionFinder(card, user);
-
+  let results = [];
+  if(editionCheck){
+    let edition = false;
+    if (card) {
+      edition = editionFinder(card, user);
+    }
+    console.log(edition, 'is edition');
+    if (edition === undefined || !edition) {
+      return {
+        text: "Sorry we couldn't work that one out."
+      };
+    }
+    _.each(edition, (e)=>{
+      let response = {
+        image_url: e.image_url,
+        edition: e.set,
+        name: card.name
+      }
+      results.push(response)
+    });
+    console.log(results);
+    return results;
+  } else {
+    return [card];
   }
-
-  if (!card || !edition) {
-    return {
-      text: "Sorry we couldn't work that one out."
-    };
-  }
-
-  let response = {
-    image: edition.image_url,
-    edition: edition.set,
-    name: card.name
-  }
-
-  return response;
 
 };
 
-editionFinder = function(card){
+editionFinder = function(card, user){
 
   let editions = card.editions;
-  _.each(editions, function(ed){
+  console.log(editions);
+  _.each(editions, (ed)=>{
+    console.log(ed, 'is single edition');
     ed.name = card.name.toLowerCase();
     Cards.insert(ed);
   });
-  return _.last(editions);
+  return editions;
 };

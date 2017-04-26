@@ -1,5 +1,5 @@
 export function checkCardDB (searchtext){
-  let res = Cards.find({name:searchtext}).fetch();
+  let res = Cards.find({name: /searchtext/}).fetch();
   if(res.length < 1){
     console.log('no match in cache');
     return false;
@@ -11,7 +11,7 @@ export function checkCardDB (searchtext){
   }
 
  if(res.length > 1) {
-   // lots of editions;
+   console.log('found array of matchs')
    return res;
  }
 
