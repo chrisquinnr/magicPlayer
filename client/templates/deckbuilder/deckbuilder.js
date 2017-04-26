@@ -1,4 +1,7 @@
-import {addToDeck} from '../../../common/lib/deck'
+import { Meteor } from 'meteor/meteor';
+import { Session } from 'meteor/session';
+import { Decks } from '/common/collections/all';
+import {addToDeck} from '/common/lib/deck'
 
 Template.deckbuilder.events({
   'click .find':()=>{

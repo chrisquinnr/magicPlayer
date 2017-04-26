@@ -1,4 +1,5 @@
 import {Meteor} from 'meteor/meteor';
+import { HTTP } from 'meteor/http';
 import {levenshtein} from './levenstein';
 import {checkCardDB} from './checkCardDB';
 import {mandatory} from '../utils/validation';
@@ -6,64 +7,35 @@ import {optional} from '../utils/validation';
 
 export function cardFetcher(searchText = mandatory('searchText'), user = mandatory('user'), options = optional()) {
 
+  // standardised, lowercase fors searching
   searchText = searchText.toLowerCase();
 
-  let params = {
-    name: searchText
-  };
-
-  if (options && options.type) {
-    params.type = options.type;
-  }
-  if (options && options.color) {
-    params.color = options.color;
-  }
-
+  // first, check our cache to avoid swamping API
   let check = checkCardDB(searchText);
   if(check) {
-    console.log('returning from cache');
-    console.log('----------');
-    console.log(check);
-    console.log('----------');
     return cardBuilder(check, searchText, user, false)
-
   } else {
-    console.log('fetching from deck brew')
     let result = HTTP.call("GET", "https://api.deckbrew.com/mtg/cards", {
       params: params
     });
-    console.log('----------');
-    console.log(result.data);
-    console.log('----------');
-    return cardBuilder(result.data, searchText, user, true)
+    if(result && result.data){
+      return cardBuilder(result.data, searchText, user, true)
+    } else {
+      return false;
+    }
   }
 }
 
+/**
+ * Parses response from deckbrew or local collection
+ */
 cardBuilder = function(data = mandatory('data'), searchText = mandatory('searchText'), user = mandatory('user'), editionCheck){
 
   let card = false;
 
+  // Do we have multiple results?
   if (data.length > 1) {
-    console.log('Running levenstein');
-
-    let leven = [];
-    let i = 0;
-    _.each(data, function (dt) {
-      console.log('checking ' + dt.name);
-      let dist = levenshtein(searchText, dt.name);
-      leven.push({count: i, card: dt.name, dist: dist});
-
-      i++;
-    });
-
-    let closest = _.min(leven, function (elem) {
-      return elem.dist;
-    });
-
-    console.log('...Closest match is ' + closest.card + ', distance of ' + closest.dist);
-
-    card = data[closest.count];
-
+    card = findClosest(data, searchText)
   } else {
     console.log('Pow, right in the kisser');
     card = data[0];
@@ -108,3 +80,24 @@ editionFinder = function(card, user){
   });
   return editions;
 };
+
+findClosest = function(data, searchText){
+  console.log('Running levenstein');
+  let leven = [];
+  let i = 0;
+  _.each(data, function (dt) {
+    console.log('checking ' + dt.name);
+    let dist = levenshtein(searchText, dt.name);
+    leven.push({count: i, card: dt.name, dist: dist});
+
+    i++;
+  });
+
+  let closest = _.min(leven, function (elem) {
+    return elem.dist;
+  });
+
+  console.log('...Closest match is ' + closest.card + ', distance of ' + closest.dist);
+
+  return data[closest.count];
+}

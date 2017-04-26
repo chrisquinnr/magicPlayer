@@ -1,3 +1,5 @@
+import { Template } from 'meteor/templating';
+import { Decks, Library, Hand } from '/common/collections/all';
 Template.game.events({
   'click .deal':()=>{
     let deck = Decks.findOne({});

@@ -1,3 +1,5 @@
+import { Decks } from '/common/collections/all';
+
 export function addToDeck (deckId, card, quantity){
   if(!quantity){
     quantity = 1;

@@ -1,3 +1,6 @@
+import { Template } from 'meteor/templating';
+import { Hand } from '/common/collections/all';
+
 Template.hand.helpers({
   hand:()=>{
     let hand = Hand.find({}).fetch();
