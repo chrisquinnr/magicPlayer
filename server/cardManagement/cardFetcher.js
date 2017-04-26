@@ -4,17 +4,25 @@ import {levenshtein} from './levenstein';
 import {checkCardDB} from './checkCardDB';
 import {mandatory} from '../utils/validation';
 import {optional} from '../utils/validation';
+import {Cards} from '/common/collections/all';
 
 export function cardFetcher(searchText = mandatory('searchText'), user = mandatory('user'), options = optional()) {
 
-  // standardised, lowercase fors searching
+  console.log('');
+  console.log('');
+  console.log('');
+  console.log('### New search request for ' + searchText);
+  // standardised, lowercase for searching
   searchText = searchText.toLowerCase();
-
+  let params = {
+    name: searchText
+  }
   // first, check our cache to avoid swamping API
   let check = checkCardDB(searchText);
   if(check) {
     return cardBuilder(check, searchText, user, false)
   } else {
+    console.log('calling API...')
     let result = HTTP.call("GET", "https://api.deckbrew.com/mtg/cards", {
       params: params
     });
@@ -29,7 +37,7 @@ export function cardFetcher(searchText = mandatory('searchText'), user = mandato
 /**
  * Parses response from deckbrew or local collection
  */
-cardBuilder = function(data = mandatory('data'), searchText = mandatory('searchText'), user = mandatory('user'), editionCheck){
+cardBuilder = function(data = mandatory('data'), searchText = mandatory('searchText'), user = mandatory('user'), newSearch){
 
   let card = false;
 
@@ -40,28 +48,22 @@ cardBuilder = function(data = mandatory('data'), searchText = mandatory('searchT
     console.log('Pow, right in the kisser');
     card = data[0];
   }
-
+  // console.log('-=-=-=-=-=-=-==-=');
+  // console.log(card)
+  // console.log('-=-=-=-=-=-=-==-=');
   let results = [];
-  if(editionCheck){
-    let edition = false;
-    if (card) {
-      edition = editionFinder(card, user);
-    }
-    console.log(edition, 'is edition');
-    if (edition === undefined || !edition) {
-      return {
-        text: "Sorry we couldn't work that one out."
-      };
-    }
-    _.each(edition, (e)=>{
+  if(newSearch){
+    console.log('is new search, so save pls')
+    let editions = saveCardsToCache(card, user);
+    _.each(editions, (e)=>{
       let response = {
+        multiverse_id: card.multiverse_id,
         image_url: e.image_url,
         edition: e.set,
         name: card.name
       }
       results.push(response)
     });
-    console.log(results);
     return results;
   } else {
     return [card];
@@ -69,16 +71,15 @@ cardBuilder = function(data = mandatory('data'), searchText = mandatory('searchT
 
 };
 
-editionFinder = function(card, user){
+saveCardsToCache = function(card, user){
 
   let editions = card.editions;
-  console.log(editions);
   _.each(editions, (ed)=>{
-    console.log(ed, 'is single edition');
     ed.name = card.name.toLowerCase();
     Cards.insert(ed);
   });
   return editions;
+
 };
 
 findClosest = function(data, searchText){

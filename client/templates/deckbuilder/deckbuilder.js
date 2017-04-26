@@ -18,9 +18,10 @@ Template.deckbuilder.events({
       });
     }
   },
-  'click .add':()=>{
+  'click .add':(e)=>{
     let curr = Session.get('result');
     console.log(curr);
+    curr.multiverse_id = e.currentTarget.id;
     let quantity = $('.quantity').val();
     addToDeck('id', curr, quantity);
     Session.set('result', '');

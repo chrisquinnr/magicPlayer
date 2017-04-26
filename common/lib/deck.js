@@ -10,7 +10,7 @@ export function addToDeck (deckId, card, quantity){
     deck = Decks.insert({list:[]});
   }
   let obj = {};
-  obj.card = card;
+  obj.card = card[0];
   obj.quantity = quantity;
 
   Decks.update({_id:deck._id}, {$addToSet:{list:obj}});
