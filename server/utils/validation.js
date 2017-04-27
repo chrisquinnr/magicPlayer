@@ -1,9 +1,9 @@
-export function mandatory (param){
+export function mandatory(param) {
   throw new Meteor.Error(param, 'Missing parameter');
 }
 
-export function optional (param){
-  if(param === 'options'){
+export function optional(param) {
+  if (param === 'options') {
     return null;
   }
 }

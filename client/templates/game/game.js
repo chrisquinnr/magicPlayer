@@ -1,19 +1,22 @@
-import { Template } from 'meteor/templating';
-import { Decks, Library, Hand } from '/common/collections/all';
+import {Template} from 'meteor/templating';
+import {Decks, Library, Hand} from '/common/collections/all';
+
 Template.game.events({
-  'click .deal':()=>{
+  'click .deal': () => {
     let deck = Decks.findOne({});
 
-    if(deck){
+    if (deck) {
       let list = deck.list;
 
       let shuffle = _.shuffle(list);
       let hand = _.first(shuffle, 7);
-      Hand.insert({cards:hand});
-      Library.insert({cards:_.rest(list, 8)});
+      Hand.insert({cards: hand});
+      Library.insert({
+        cards: _.rest(list, 8)
+      });
     }
   },
-  'click .draw':()=>{
+  'click .draw': () => {
 
     let l = Library.findOne({});
 
@@ -25,9 +28,13 @@ Template.game.events({
 
     cards.push(card);
 
-
-
-    Hand.update({_id:h._id}, {$set:{cards:cards}});
-   }
+    Hand.update({
+      _id: h._id
+    }, {
+      $set: {
+        cards: cards
+      }
+    });
+  }
 
 });

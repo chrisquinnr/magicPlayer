@@ -1,8 +1,8 @@
-import { Template } from 'meteor/templating';
-import { Hand } from '/common/collections/all';
+import {Template} from 'meteor/templating';
+import {Hand} from '/common/collections/all';
 
 Template.hand.helpers({
-  hand:()=>{
+  hand: () => {
     let hand = Hand.find({}).fetch();
     let data = _.pluck(hand, 'cards');
     console.log(data[0]);

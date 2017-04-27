@@ -1,6 +1,6 @@
 import {cardFetcher} from '../cardManagement/cardFetcher';
 Meteor.methods({
-  'findCard':(searchText)=>{
+  'findCard': (searchText) => {
     return cardFetcher(searchText, 'chris');
   }
 });
