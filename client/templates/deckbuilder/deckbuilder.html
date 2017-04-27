@@ -7,31 +7,36 @@
   <div class="row">
     <div class="col-lg-4">
       <input type="text" placeholder='card name' name="cardname" class="form-control cardname">
+      <ul>
+        {{#each suggestions}}
+          <li>
+            <p id='{{multiverse_id}}'>{{name}}<br><img src='{{image_url}}'>
+                <button id="{{multiverse_id}}" class="btn btn-success add">Add</button>
+            </p>
+          </li>
+        {{/each}}
+      </ul>
     </div>
     <div class="col-lg-1">
       <input type="text" placeholder='quantity' name="quantity" class="form-control quantity">
     </div>
-    <div class="col-lg-2">
-      <button class="btn btn-success find">Go</button>
+    <div class="col-lg-3">
+      {{#with decklist}}
+        <h2>{{name}}</h2>
+        {{#each list}}
+          {{cardID}}
+          {{#with getCard cardID}}
+            <img src='{{image_url}}'>
+          {{/with}}
+        {{/each}}
+      {{/with}}
     </div>
   </div>
   <div class="row">
     <div class="col-lg-6">
-      {{#if result}}
-        {{#each result}}
-          <div class="result">
-            <img src="{{image_url}}">
-            <button id="{{multiverse_id}}" class="btn btn-success add">Add</button>
-          </div>
-        {{/each}}
-      {{/if}}
     </div>
     <div class="col-lg-4">
-    {{#if decklist}}
-      {{#each decklist.list}}
-        {{>card data=card small='true'}}
-      {{/each}}
-    {{/if}}
+
     </div>
   </div>
 </template>
