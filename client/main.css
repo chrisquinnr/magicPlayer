@@ -6,6 +6,10 @@
   margin:1em;
 }
 
+.card img {
+  width:150px
+}
+
 .rotate{
   transform: rotate(0.25turn);
 }

@@ -17,6 +17,7 @@ Template.deckbuilder.events({
   'click .add': (e) => {
     let cardID = e.currentTarget.id;
     let quantity = $('.quantity').val();
+    if(!cardID || !quantity)
     addToDeck('id', cardID, quantity);
     searchString.set();
     suggestions.set();
@@ -60,7 +61,7 @@ Template.deckbuilder.helpers({
   },
   getCard:(mvId)=>{
     console.log(mvId);
-    let c = Cards.findOne({multiverse_id:mvId});
+    let c = Cards.findOne({multiverse_id:+mvId});
     console.log(c);
     return c;
   }

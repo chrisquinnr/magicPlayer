@@ -25,5 +25,5 @@ kadira:flow-router
 kadira:blaze-layout
 http@1.2.12
 session@1.1.7
-check@1.2.5
+check
 shell-server

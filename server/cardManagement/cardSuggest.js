@@ -19,6 +19,7 @@ export function cardSuggest(partialQuery = mandatory('partialQuery')) {
         multiverse_id: r.editions[0].multiverse_id
       })
     });
+    console.log(parsed);
     return parsed;
   } else {
     return false;

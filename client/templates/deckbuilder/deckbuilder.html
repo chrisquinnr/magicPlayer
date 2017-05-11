@@ -20,14 +20,15 @@
     <div class="col-lg-1">
       <input type="text" placeholder='quantity' name="quantity" class="form-control quantity">
     </div>
-    <div class="col-lg-3">
+    <div class="col-lg-7">
       {{#with decklist}}
         <h2>{{name}}</h2>
         {{#each list}}
-          {{cardID}}
-          {{#with getCard cardID}}
-            <img src='{{image_url}}'>
-          {{/with}}
+          <div class="card pull-left">
+            {{#with getCard cardID}}
+              <img src='{{image_url}}'>
+            {{/with}}
+          </div>
         {{/each}}
       {{/with}}
     </div>
